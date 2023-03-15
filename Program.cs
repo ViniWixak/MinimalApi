@@ -16,7 +16,7 @@ app.MapGet("/v1/todos", (DataContext context) =>
 {
     var todos = context.Todos;
     return todos is not null ? Results.Ok(todos) : Results.NotFound();
-}).Produces<Todo>();
+});
 
 app.MapPost("/v1/todos", (DataContext context, CreateTodoViewModel model) =>
 {
@@ -28,6 +28,20 @@ app.MapPost("/v1/todos", (DataContext context, CreateTodoViewModel model) =>
     context.SaveChanges();
 
     return Results.Created($"/v1/todos/{todo.Id}", todo);
+});
+
+app.MapPut("/v1/todos", (DataContext context, UpdateTodoViewModel model) => {
+    model.MapTo();
+    if (!model.IsValid)
+        return Results.BadRequest(model.Notifications);
+
+    var todo = context.Todos.First( t => t.Id == model.TodoId);
+    if (todo is not null)
+    {
+        todo.Title = model.Title;        
+        context.SaveChanges();
+    }
+    return Results.Ok(todo);
 });
 
 app.Run();
