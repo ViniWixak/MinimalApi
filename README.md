@@ -8,10 +8,7 @@
  <a href="#description">Description</a> •
  <a href="#layout">Layout</a> • 
  <a href="#requirements">Requirements</a> • 
- <a href="#install">Install</a> • 
- <a href="#update-sources">Update sources</a> • 
  <a href="#languages-and-tools">Languages and tools</a> • 
- <a href="#license">License</a>
 </p>
 
 ## Description
