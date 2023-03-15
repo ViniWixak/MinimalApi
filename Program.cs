@@ -44,4 +44,16 @@ app.MapPut("/v1/todos", (DataContext context, UpdateTodoViewModel model) => {
     return Results.Ok(todo);
 });
 
+app.MapDelete("/v1/todos", (DataContext context, Guid id) => {
+    
+    var todo = context.Todos.First(t => t.Id == id);
+    if (todo is not null)
+    {
+        context.Todos.Remove(todo);
+        context.SaveChanges();
+        return Results.Ok(todo);
+    }
+    return Results.BadRequest("Id não encontrado");
+});
+
 app.Run();
