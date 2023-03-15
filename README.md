@@ -5,10 +5,10 @@
 </h4>
 
 <p align="center">
- <a href="#description">Description</a> •
- <a href="#layout">Layout</a> • 
- <a href="#requirements">Requirements</a> • 
- <a href="#languages-and-tools">Languages and tools</a> • 
+ <a href="#description">Description</a> â€¢
+ <a href="#layout">Layout</a> â€¢ 
+ <a href="#requirements">Requirements</a> â€¢ 
+ <a href="#languages-and-tools">Languages and tools</a> 
 </p>
 
 ## Description
